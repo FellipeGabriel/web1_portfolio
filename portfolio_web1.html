@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fellipe Gabriel - Portfólio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        :root {
+            --bg-color: #0a0a0a;
+            --text-color: #ffffff;
+            --accent-color: #00c8ff;
+            --secondary-color: #7b68ee;
+            --tertiary-color: #ff6b6b;
+            --glow-color: rgba(0, 200, 255, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), var(--secondary-color), var(--tertiary-color));
+            border-radius: 2px;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--accent-color), var(--secondary-color), var(--tertiary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px var(--glow-color);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-color);
+            box-shadow: 0 0 30px var(--glow-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05) rotate(5deg);
+            box-shadow: 0 0 40px var(--glow-color);
+        }
+
+        .profile-info {
+            max-width: 600px;
+        }
+
+        .section {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--glow-color) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .section:hover::before {
+            opacity: 0.5;
+        }
+
+        .section h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--tertiary-color);
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skill {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 200, 255, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .profile {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .section {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Fellipe Gabriel</h1>
+            <h2>Desenvolvedor Web &amp; Aspirante a Empreendedor em Cybersegurança</h2>
+        </header>
+
+        <main>
+            <section class="profile">
+                <img src="pic.jpeg" alt="Fellipe Gabriel" class="profile-image">
+                <div class="profile-info">
+                    <p>Olá! Sou Fellipe Gabriel Gonçalves de Araújo, um desenvolvedor web de 19 anos com paixão por aprender cada vez mais. Atualmente, estou no 5º período da faculdade e trabalho como Supervisor de MIS na TRC Taborda, onde aplico meus conhecimentos em desenvolvimento web para criar soluções internas eficientes.</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h3>Experiência Profissional</h3>
+                <p>Supervisor de MIS na TRC Taborda</p>
+                <ul>
+                    <li>Desenvolvimento de aplicações web internas</li>
+                    <li>Utilização de React com TypeScript e Vite no frontend</li>
+                    <li>Implementação de backend com C# e ASP.NET</li>
+                    <li>Trabalho com SQL Server para gerenciamento de dados</li>
+                    <li>Criação de automações utilizando Python</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h3>Habilidades Técnicas</h3>
+                <div class="skills">
+                    <span class="skill">React</span>
+                    <span class="skill">TypeScript</span>
+                    <span class="skill">Vite</span>
+                    <span class="skill">C#</span>
+                    <span class="skill">ASP.NET</span>
+                    <span class="skill">SQL Server</span>
+                    <span class="skill">Python</span>
+                    <span class="skill">HTML</span>
+                    <span class="skill">CSS</span>
+                </div>
+            </section>
+
+            <section class="section">
+                <h3>Objetivos</h3>
+                <ul>
+                    <li>Aprofundar conhecimentos em programação low-level</li>
+                    <li>Abrir uma empresa de Cybersegurança</li>
+                    <li>Continuar aprimorando habilidades em desenvolvimento full stack</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
